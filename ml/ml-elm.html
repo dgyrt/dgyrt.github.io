@@ -244,7 +244,7 @@
 
 <script type="math/tex; mode=display">J(H, T, W_{o})=C||H\cdot W_{o} - T||_{p}^{\sigma_{1}}+||W_{o}||_{q}^{\sigma_{2}}</script>
 
-<p>where <script type="math/tex">C</script> is regularization term, <script type="math/tex">\sigma\_{1}>0</script> and <script type="math/tex">\sigma_{2}>0</script>, <script type="math/tex">p</script> and <script type="math/tex">q</script> is indicating the norm. The above function is clearly a Linear Regression formulation. Note that unlike conventional neural networks, there is no activation function (or say it’s a linear activation) to output layer. It’s not hard to say that we can use Gradient Descent to find the representation of <script type="math/tex">W_{o}</script>. However, ELM offered an analytical solution when <script type="math/tex">p=q=\sigma_{1}=\sigma_{2}=2</script>:</p>
+<p>where <script type="math/tex">C</script> is regularization term, <script type="math/tex">\sigma_{1}>0</script> and <script type="math/tex">\sigma_{2}>0</script>, <script type="math/tex">p</script> and <script type="math/tex">q</script> is indicating the norm. The above function is clearly a Linear Regression formulation. Note that unlike conventional neural networks, there is no activation function (or say it’s a linear activation) to output layer. It’s not hard to say that we can use Gradient Descent to find the representation of <script type="math/tex">W_{o}</script>. However, ELM offered an analytical solution when <script type="math/tex">p=q=\sigma_{1}=\sigma_{2}=2</script>:</p>
 
 <script type="math/tex; mode=display">W_{o}=\left(\frac{I}{C}+H^{\top}H\right)^{-1}H^{\top}T</script>
 
