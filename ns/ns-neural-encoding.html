@@ -201,26 +201,8 @@
 <h3 id="encoding-and-decoding">Encoding and Decoding</h3>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>Encoding solves “how does a stimulus cause a pattern of responses?” ($$P(response</td>
-          <td>stimulus)$$).</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>Decoding solves “what do these responses tell us about the stimulus?” ($$P(stimulus</td>
-          <td>response)$$).</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>Encoding solves “how does a stimulus cause a pattern of responses?” (<script type="math/tex">P(\text{response}\|\text{stimulus})</script>).</li>
+  <li>Decoding solves “what do these responses tell us about the stimulus?” (<script type="math/tex">P(\text{stimulus}\|\text{response})</script>).</li>
 </ul>
 
 <h3 id="basic-coding-model">Basic Coding Model</h3>
@@ -265,14 +247,7 @@
 
 <script type="math/tex; mode=display">P(\text{spike}|s_{f})=\frac{P(s_{f}|\text{spike})P(\text{spike})}{P(s_{f})}</script>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The Goodness measure between $$P(s_{f}</td>
-      <td>spike)<script type="math/tex">and</script>P(s_{f})$$:</td>
-    </tr>
-  </tbody>
-</table>
+<p>The Goodness measure between <script type="math/tex">P(s_{f}\|\text{spike})</script> and <script type="math/tex">P(s_{f})</script>:</p>
 
 <script type="math/tex; mode=display">D_{KL}(P(s_{f}|\text{spike}), P(s_{f}))</script>
 
