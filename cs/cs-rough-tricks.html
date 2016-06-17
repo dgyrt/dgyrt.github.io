@@ -207,29 +207,29 @@
 <h3 id="customize-html-table-style">Customize HTML Table Style</h3>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#070;font-weight:bold">table</span> {
-    <span style="color:#606">border-collapse</span>: <span style="color:#088">collapse</span>;
-}
-
-<span style="color:#070;font-weight:bold">table</span>, <span style="color:#070;font-weight:bold">th</span>, <span style="color:#070;font-weight:bold">td</span>{
-    <span style="color:#606">border</span>: <span style="color:#60E">1px</span> <span style="color:#088">solid</span> <span style="color:#0A0">#dedede</span>;
-}
-
-<span style="color:#070;font-weight:bold">tr</span><span style="color:#00C;font-weight:bold">:nth-child</span>(<span style="color:#070;font-weight:bold">even</span>){
-    <span style="color:#606">background</span>: <span style="color:#0A0">#f2f2f2</span>
-}
-
-<span style="color:#070;font-weight:bold">tr</span><span style="color:#00C;font-weight:bold">:nth-child</span>(<span style="color:#070;font-weight:bold">odd</span>){
-    <span style="color:#606">background</span>: <span style="color:#0A0">#fff</span>
-}
-
-<span style="color:#B06;font-weight:bold">.table</span> <span style="color:#070;font-weight:bold">th</span>, <span style="color:#B06;font-weight:bold">.table</span> <span style="color:#070;font-weight:bold">td</span>{
-    <span style="color:#606">padding</span>: <span style="color:#60E">20px</span>;
-}
-
-<span style="color:#070;font-weight:bold">tr</span><span style="color:#00C;font-weight:bold">:hover</span>, <span style="color:#070;font-weight:bold">td</span><span style="color:#00C;font-weight:bold">:hover</span>{
-    <span style="color:#606">background</span>: <span style="color:#0A0">#ffff99</span>;
-}
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">table</span> {
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#606">border-collapse</span>: <span style="color:#088">collapse</span>;
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>}
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#070;font-weight:bold">table</span>, <span style="color:#070;font-weight:bold">th</span>, <span style="color:#070;font-weight:bold">td</span>{
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#606">border</span>: <span style="color:#60E">1px</span> <span style="color:#088">solid</span> <span style="color:#0A0">#dedede</span>;
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>}
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#070;font-weight:bold">tr</span><span style="color:#00C;font-weight:bold">:nth-child</span>(<span style="color:#070;font-weight:bold">even</span>){
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#606">background</span>: <span style="color:#0A0">#f2f2f2</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>}
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#070;font-weight:bold">tr</span><span style="color:#00C;font-weight:bold">:nth-child</span>(<span style="color:#070;font-weight:bold">odd</span>){
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#606">background</span>: <span style="color:#0A0">#fff</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>}
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#B06;font-weight:bold">.table</span> <span style="color:#070;font-weight:bold">th</span>, <span style="color:#B06;font-weight:bold">.table</span> <span style="color:#070;font-weight:bold">td</span>{
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>    <span style="color:#606">padding</span>: <span style="color:#60E">20px</span>;
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>}
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="color:#070;font-weight:bold">tr</span><span style="color:#00C;font-weight:bold">:hover</span>, <span style="color:#070;font-weight:bold">td</span><span style="color:#00C;font-weight:bold">:hover</span>{
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#606">background</span>: <span style="color:#0A0">#ffff99</span>;
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>}
 </pre></div>
 </div>
 </div>
@@ -241,7 +241,7 @@
 <p>First of all, you need to include Google Maps javascript in your layout:</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">src</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://maps.googleapis.com/maps/api/js</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">src</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">https://maps.googleapis.com/maps/api/js</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -249,10 +249,10 @@
 <p>You can usually find layout scripts in <code>_layout</code> (<a href="https://github.com/duguyue100/duguyue100.github.io/blob/master/_layouts/default.html#L4">example</a>).</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#33D;font-weight:bold">#map-canvas</span> {
-    <span style="color:#606">width</span>: <span style="color:#60E">500px</span>;
-    <span style="color:#606">height</span>: <span style="color:#60E">400px</span>;
-}
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#33D;font-weight:bold">#map-canvas</span> {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#606">width</span>: <span style="color:#60E">500px</span>;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#606">height</span>: <span style="color:#60E">400px</span>;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>}
 </pre></div>
 </div>
 </div>
@@ -262,18 +262,18 @@
 <p>Then, in you post, you need to define the specifics by implementing <code>initialize</code> function:</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;script&gt;</span>
-<span style="background-color:hsla(0,0%,0%,0.07);color:black">    <span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">initialize</span>() {
-        <span style="color:#080;font-weight:bold">var</span> mapCanvas = document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">map-canvas</span><span style="color:#710">'</span></span>);
-        <span style="color:#080;font-weight:bold">var</span> mapOptions = {
-            <span style="color:#606">center</span>: <span style="color:#080;font-weight:bold">new</span> google.maps.LatLng(<span style="color:#60E">44.5403</span>, -<span style="color:#60E">78.5463</span>),
-            <span style="color:#606">zoom</span>: <span style="color:#00D">8</span>,
-            <span style="color:#606">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
-        }
-        <span style="color:#080;font-weight:bold">var</span> map = <span style="color:#080;font-weight:bold">new</span> google.maps.Map(mapCanvas, mapOptions)
-    }
-    google.maps.event.addDomListener(window, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, initialize);</span>
-<span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;script&gt;</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">    <span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">initialize</span>() {</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">        <span style="color:#080;font-weight:bold">var</span> mapCanvas = document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">map-canvas</span><span style="color:#710">'</span></span>);</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">        <span style="color:#080;font-weight:bold">var</span> mapOptions = {</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">            <span style="color:#606">center</span>: <span style="color:#080;font-weight:bold">new</span> google.maps.LatLng(<span style="color:#60E">44.5403</span>, -<span style="color:#60E">78.5463</span>),</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">            <span style="color:#606">zoom</span>: <span style="color:#00D">8</span>,</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">            <span style="color:#606">mapTypeId</span>: google.maps.MapTypeId.ROADMAP</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">        }</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">        <span style="color:#080;font-weight:bold">var</span> map = <span style="color:#080;font-weight:bold">new</span> google.maps.Map(mapCanvas, mapOptions)</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">    }</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="background-color:hsla(0,0%,0%,0.07);color:black">    google.maps.event.addDomListener(window, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, initialize);</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -283,7 +283,7 @@
 <p>After you did everything, you can simply include the map as follows:</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">map-canvas</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">id</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">map-canvas</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -314,8 +314,8 @@
 <p><code>evaluate()</code> sets the mode of the Module (or sub-modules) to <code>train=false</code>. This is useful for modules like Dropout that have a different behaviour during training vs evaluation.</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>net=loadcaffe.<span style="color:#369;font-weight:bold">load</span>(prototxt, binary);
-net:evaluate(); <span style="color:#777">-- switch off dropout</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>net=loadcaffe.<span style="color:#369;font-weight:bold">load</span>(prototxt, binary);
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>net:evaluate(); <span style="color:#777">-- switch off dropout</span>
 </pre></div>
 </div>
 </div>

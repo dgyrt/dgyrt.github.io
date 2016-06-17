@@ -207,10 +207,10 @@
 <p><a href="http://melpa.org/">MELPA</a> (Milkypostman’s Emacs Lisp Package Archive) is an archive of Emacs packages. It’s stable and easy to use. You can setup MELPA as:</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>(require 'package)
-(add-to-list 'package-archives
-             '(&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;) t)
-(package-initialize)
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>(require 'package)
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>(add-to-list 'package-archives
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>             '(&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;) t)
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>(package-initialize)
 </pre></div>
 </div>
 </div>
@@ -220,13 +220,13 @@
 <p>Emacs does not adapt <code>.profile</code> automatically, then when you wish to call your shell an run some commands, there may some issues (I’m using Anaconda for my Python support, and I noticed this when I tried and failed to plot somethings). You can use <code>exec-path-from-shell</code> to resolve this problem, the code is <a href="https://github.com/purcell/exec-path-from-shell">here</a>. The package is also available in MELPA.</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>; add to list if you install manually
-(add-to-list 'load-path &quot;~/.emacs.d/site-lisp/exec-path-from-shell&quot;)
-
-; you only enable the mode when it's running on OS X
-(require 'exec-path-from-shell)
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>; add to list if you install manually
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>(add-to-list 'load-path &quot;~/.emacs.d/site-lisp/exec-path-from-shell&quot;)
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>; you only enable the mode when it's running on OS X
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>(require 'exec-path-from-shell)
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>(when (memq window-system '(mac ns))
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  (exec-path-from-shell-initialize))
 </pre></div>
 </div>
 </div>
@@ -236,9 +236,9 @@
 <p>Scroll bar is a pain for the most of time and menu bar will take many spaces when you are working on a laptop. I prefer to turn off them. Furthermore, the usual way of maximizing Emacs window is not working perfectly with OS X. It always leave a slide of space on the top. So you need another way of settling this:</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(setq frame-resize-pixelwise t)
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>(tool-bar-mode -1)
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>(scroll-bar-mode -1)
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>(setq frame-resize-pixelwise t)
 </pre></div>
 </div>
 </div>
@@ -248,7 +248,7 @@
 <p>I would rather use <code>y-and-n</code> instead of typing entire <code>yes</code> or <code>no</code>, would you?</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>(defalias 'yes-or-no-p 'y-or-n-p)
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>(defalias 'yes-or-no-p 'y-or-n-p)
 </pre></div>
 </div>
 </div>
@@ -258,13 +258,13 @@
 <p>There are some difference between Ubuntu’s font and OS X’s font. I then configure them differently</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>(if (eq system-type 'gnu/linux)
-    (add-to-list 'default-frame-alist '(font .  &quot;Courier 10 Pitch-15&quot; ))
-)
-
-(if (eq system-type 'darwin)
-    (add-to-list 'default-frame-alist '(font .  &quot;Courier-15&quot; ))
-)
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>(if (eq system-type 'gnu/linux)
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    (add-to-list 'default-frame-alist '(font .  &quot;Courier 10 Pitch-15&quot; ))
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>)
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>(if (eq system-type 'darwin)
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>    (add-to-list 'default-frame-alist '(font .  &quot;Courier-15&quot; ))
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>)
 </pre></div>
 </div>
 </div>

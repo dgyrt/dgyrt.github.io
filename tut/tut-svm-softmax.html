@@ -203,47 +203,47 @@
 <p>We usually minimize Categorical Cross Entropy cost to train a Softmax Regression Layer. This cost can measure the cross entropy between predicted output and target output.</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SoftmaxLayer</span>(Layer):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Softmax Layer</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
-        <span style="color:#369;font-weight:bold">super</span>(SoftmaxLayer, <span style="color:#069">self</span>).__init__(**kwargs);
-        
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
-        <span style="color:#080;font-weight:bold">return</span> nnfuns.softmax(<span style="color:#069">self</span>.apply_lin(X));
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">predict</span>(<span style="color:#069">self</span>, X_out):
-        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Predict label</span><span>
-</span><span>        </span><span>
-</span><span>        Parameters</span><span>
-</span><span>        ----------</span><span>
-</span><span>        X_out : matrix</span><span>
-</span><span>            input sample outputs, the size is (number of cases, number of classes)</span><span>
-</span><span>            </span><span>
-</span><span>        Returns</span><span>
-</span><span>        -------</span><span>
-</span><span>        Y_pred : vector</span><span>
-</span><span>            predicted label, the size is (number of cases)</span><span>
-</span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
-        
-        <span style="color:#080;font-weight:bold">return</span> T.argmax(X_out, axis=<span style="color:#00D">1</span>);
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">error</span>(<span style="color:#069">self</span>, X_out, Y):
-        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Mis-classified label</span><span>
-</span><span>        </span><span>
-</span><span>        Parameters</span><span>
-</span><span>        ----------</span><span>
-</span><span>        X_out : vector</span><span>
-</span><span>            predict labels, the size is (number of cases, number of classes)</span><span>
-</span><span>        Y : vector</span><span>
-</span><span>            correct labels, the size is (number of cases)</span><span>
-</span><span>            </span><span>
-</span><span>        Returns</span><span>
-</span><span>        -------</span><span>
-</span><span>        error : scalar</span><span>
-</span><span>            difference between predicted label and true label.</span><span>
-</span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
-    
-        <span style="color:#080;font-weight:bold">return</span> T.mean(T.neq(<span style="color:#069">self</span>.predict(X_out), Y));
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SoftmaxLayer</span>(Layer):
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Softmax Layer</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>        <span style="color:#369;font-weight:bold">super</span>(SoftmaxLayer, <span style="color:#069">self</span>).__init__(**kwargs);
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        <span style="color:#080;font-weight:bold">return</span> nnfuns.softmax(<span style="color:#069">self</span>.apply_lin(X));
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">predict</span>(<span style="color:#069">self</span>, X_out):
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Predict label</span><span></span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#D42"><span></span><span>        </span><span></span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#D42"><span></span><span>        Parameters</span><span></span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#D42"><span></span><span>        ----------</span><span></span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#D42"><span></span><span>        X_out : matrix</span><span></span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#D42"><span></span><span>            input sample outputs, the size is (number of cases, number of classes)</span><span></span></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#D42"><span></span><span>            </span><span></span></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#D42"><span></span><span>        Returns</span><span></span></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#D42"><span></span><span>        -------</span><span></span></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#D42"><span></span><span>        Y_pred : vector</span><span></span></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="color:#D42"><span></span><span>            predicted label, the size is (number of cases)</span><span></span></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="color:#D42"><span></span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>        
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>        <span style="color:#080;font-weight:bold">return</span> T.argmax(X_out, axis=<span style="color:#00D">1</span>);
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>    
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">error</span>(<span style="color:#069">self</span>, X_out, Y):
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Mis-classified label</span><span></span></span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span><span style="color:#D42"><span></span><span>        </span><span></span></span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span><span style="color:#D42"><span></span><span>        Parameters</span><span></span></span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span><span style="color:#D42"><span></span><span>        ----------</span><span></span></span>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span style="color:#D42"><span></span><span>        X_out : vector</span><span></span></span>
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span><span style="color:#D42"><span></span><span>            predict labels, the size is (number of cases, number of classes)</span><span></span></span>
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span><span style="color:#D42"><span></span><span>        Y : vector</span><span></span></span>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span><span style="color:#D42"><span></span><span>            correct labels, the size is (number of cases)</span><span></span></span>
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span><span style="color:#D42"><span></span><span>            </span><span></span></span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span><span style="color:#D42"><span></span><span>        Returns</span><span></span></span>
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span><span style="color:#D42"><span></span><span>        -------</span><span></span></span>
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span><span style="color:#D42"><span></span><span>        error : scalar</span><span></span></span>
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span><span style="color:#D42"><span></span><span>            difference between predicted label and true label.</span><span></span></span>
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span><span style="color:#D42"><span></span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>    
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>        <span style="color:#080;font-weight:bold">return</span> T.mean(T.neq(<span style="color:#069">self</span>.predict(X_out), Y));
 </pre></div>
 </div>
 </div>

@@ -215,30 +215,30 @@
 <p>A example implementation looks like this (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/model.py#L24-L47">here</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fprop</span>(<span style="color:#069">self</span>,
-              X):
-        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Forward propagation</span><span>
-</span><span>        </span><span>
-</span><span>        Parameters</span><span>
-</span><span>        ----------</span><span>
-</span><span>        X : matrix or 4D tensor</span><span>
-</span><span>            input samples, the size is (number of cases, in_dim)</span><span>
-</span><span>            </span><span>
-</span><span>        Returns</span><span>
-</span><span>        -------</span><span>
-</span><span>        out : list</span><span>
-</span><span>            output list from each layer</span><span>
-</span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
-        
-        out=[];
-        level_out=X;
-        <span style="color:#080;font-weight:bold">for</span> k, layer <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">enumerate</span>(<span style="color:#069">self</span>.layers):
-            
-            level_out=layer.apply(level_out);
-            
-            out.append(level_out);
-            
-        <span style="color:#080;font-weight:bold">return</span> out;
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fprop</span>(<span style="color:#069">self</span>,
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>              X):
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Forward propagation</span><span></span></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#D42"><span></span><span>        </span><span></span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#D42"><span></span><span>        Parameters</span><span></span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#D42"><span></span><span>        ----------</span><span></span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#D42"><span></span><span>        X : matrix or 4D tensor</span><span></span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#D42"><span></span><span>            input samples, the size is (number of cases, in_dim)</span><span></span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#D42"><span></span><span>            </span><span></span></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#D42"><span></span><span>        Returns</span><span></span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#D42"><span></span><span>        -------</span><span></span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#D42"><span></span><span>        out : list</span><span></span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#D42"><span></span><span>            output list from each layer</span><span></span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#D42"><span></span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>        
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>        out=[];
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>        level_out=X;
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>        <span style="color:#080;font-weight:bold">for</span> k, layer <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">enumerate</span>(<span style="color:#069">self</span>.layers):
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>            
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>            level_out=layer.apply(level_out);
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>            
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>            out.append(level_out);
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>            
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>        <span style="color:#080;font-weight:bold">return</span> out;
 </pre></div>
 </div>
 </div>
@@ -248,14 +248,14 @@
 <h4 id="example-of-create-a-network-model">Example of create a network model</h4>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>layer_0=ReLULayer(in_dim=<span style="color:#00D">784</span>,
-                  out_dim=<span style="color:#00D">500</span>);
-layer_1=ReLULayer(in_dim=<span style="color:#00D">500</span>,
-                  out_dim=<span style="color:#00D">200</span>);
-layer_2=SoftmaxLayer(in_dim=<span style="color:#00D">200</span>,
-                     out_dim=<span style="color:#00D">10</span>);
-                                          
-model=FeedForward(layers=[layer_0, layer_1, layer_2]);
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>layer_0=ReLULayer(in_dim=<span style="color:#00D">784</span>,
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>                  out_dim=<span style="color:#00D">500</span>);
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>layer_1=ReLULayer(in_dim=<span style="color:#00D">500</span>,
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>                  out_dim=<span style="color:#00D">200</span>);
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>layer_2=SoftmaxLayer(in_dim=<span style="color:#00D">200</span>,
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>                     out_dim=<span style="color:#00D">10</span>);
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>                                          
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>model=FeedForward(layers=[layer_0, layer_1, layer_2]);
 </pre></div>
 </div>
 </div>
@@ -277,23 +277,23 @@ model=FeedForward(layers=[layer_0, layer_1, layer_2]);
 <script type="math/tex; mode=display">H(p,q)=-\sum_{x}p(x)\log(q(x))</script>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">categorical_cross_entropy_cost</span>(Y_hat, Y_star):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Categorical Cross Entropy Cost</span><span>
-</span><span>    </span><span>
-</span><span>    Parameters</span><span>
-</span><span>    ----------</span><span>
-</span><span>    Y_hat : tensor</span><span>
-</span><span>        predicted output of neural network</span><span>
-</span><span>    Y_star : tensor</span><span>
-</span><span>        optimal output of neural network</span><span>
-</span><span>        </span><span>
-</span><span>    Returns</span><span>
-</span><span>    -------</span><span>
-</span><span>    costs : scalar</span><span>
-</span><span>        cost of Categorical Cross Entropy Cost</span><span>
-</span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
-    
-    <span style="color:#080;font-weight:bold">return</span> T.nnet.categorical_crossentropy(Y_hat, Y_star).mean();
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">categorical_cross_entropy_cost</span>(Y_hat, Y_star):
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Categorical Cross Entropy Cost</span><span></span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#D42"><span></span><span>    </span><span></span></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#D42"><span></span><span>    Parameters</span><span></span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#D42"><span></span><span>    ----------</span><span></span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#D42"><span></span><span>    Y_hat : tensor</span><span></span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#D42"><span></span><span>        predicted output of neural network</span><span></span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#D42"><span></span><span>    Y_star : tensor</span><span></span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#D42"><span></span><span>        optimal output of neural network</span><span></span></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#D42"><span></span><span>        </span><span></span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#D42"><span></span><span>    Returns</span><span></span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#D42"><span></span><span>    -------</span><span></span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#D42"><span></span><span>    costs : scalar</span><span></span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#D42"><span></span><span>        cost of Categorical Cross Entropy Cost</span><span></span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#D42"><span></span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span style="color:#080;font-weight:bold">return</span> T.nnet.categorical_crossentropy(Y_hat, Y_star).mean();
 </pre></div>
 </div>
 </div>
@@ -305,9 +305,9 @@ model=FeedForward(layers=[layer_0, layer_1, layer_2]);
 <p>All relevant parameters in the model should be documented together in order to get the correct gradient for the entire model. You can use an one-liner to do this job:</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>    <span style="color:#B0B">@property</span>
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">params</span>(<span style="color:#069">self</span>):
-        <span style="color:#080;font-weight:bold">return</span> [param <span style="color:#080;font-weight:bold">for</span> layer <span style="color:#080;font-weight:bold">in</span> <span style="color:#069">self</span>.layers <span style="color:#080;font-weight:bold">if</span> <span style="color:#369;font-weight:bold">hasattr</span>(layer, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">params</span><span style="color:#710">'</span></span>) <span style="color:#080;font-weight:bold">for</span> param <span style="color:#080;font-weight:bold">in</span> layer.params];
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>    <span style="color:#B0B">@property</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">params</span>(<span style="color:#069">self</span>):
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>        <span style="color:#080;font-weight:bold">return</span> [param <span style="color:#080;font-weight:bold">for</span> layer <span style="color:#080;font-weight:bold">in</span> <span style="color:#069">self</span>.layers <span style="color:#080;font-weight:bold">if</span> <span style="color:#369;font-weight:bold">hasattr</span>(layer, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">params</span><span style="color:#710">'</span></span>) <span style="color:#080;font-weight:bold">for</span> param <span style="color:#080;font-weight:bold">in</span> layer.params];
 </pre></div>
 </div>
 </div>
@@ -321,11 +321,11 @@ model=FeedForward(layers=[layer_0, layer_1, layer_2]);
 <p>You just need to call the function <code>grad(cost, params)</code>, it will compute a corresponding list of parameter gradients.</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>    gparams=T.grad(cost, params);
-    
-    <span style="color:#080;font-weight:bold">for</span> gparam, param <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">zip</span>(gparams, params):
-        <span style="color:#080;font-weight:bold">if</span> method==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sgd</span><span style="color:#710">&quot;</span></span>:
-            updates[param]=param-learning_rate*gparam;
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>    gparams=T.grad(cost, params);
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>    
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">for</span> gparam, param <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">zip</span>(gparams, params):
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>        <span style="color:#080;font-weight:bold">if</span> method==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sgd</span><span style="color:#710">&quot;</span></span>:
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>            updates[param]=param-learning_rate*gparam;
 </pre></div>
 </div>
 </div>
@@ -335,11 +335,11 @@ model=FeedForward(layers=[layer_0, layer_1, layer_2]);
 <p>You can then use the updates of the parameters to build a training model:</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>train=theano.function(inputs=[idx],
-                      outputs=cost,
-                      updates=updates,
-                      givens={X: train_set_x[idx * batch_size: (idx + <span style="color:#00D">1</span>) * batch_size],
-                              y: train_set_y[idx * batch_size: (idx + <span style="color:#00D">1</span>) * batch_size]});
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>train=theano.function(inputs=[idx],
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>                      outputs=cost,
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>                      updates=updates,
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>                      givens={X: train_set_x[idx * batch_size: (idx + <span style="color:#00D">1</span>) * batch_size],
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>                              y: train_set_y[idx * batch_size: (idx + <span style="color:#00D">1</span>) * batch_size]});
 </pre></div>
 </div>
 </div>

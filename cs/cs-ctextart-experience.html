@@ -211,9 +211,9 @@
 <h3 id="configure-fonts-on-osx">Configure Fonts on OSX</h3>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>\setCJKmainfont[BoldFont=STHeiti, ItalicFont=STKaiti]{STSong}
-\setCJKsansfont[BoldFont=STHeiti]{STXihei}
-\setCJKmonofont{STFangsong}
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>\setCJKmainfont[BoldFont=STHeiti, ItalicFont=STKaiti]{STSong}
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>\setCJKsansfont[BoldFont=STHeiti]{STXihei}
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>\setCJKmonofont{STFangsong}
 </pre></div>
 </div>
 </div>
@@ -221,22 +221,22 @@
 <h3 id="define-a-custom-framed-box">Define a Custom Framed Box</h3>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>\newcounter{faqbox}[section]
-\renewcommand{\thefaqbox}{\thechapter.\arabic{faqbox}}
-\usepackage[framemethod=TikZ]{mdframed}
-\newenvironment{faqbox}[1][]{
-    \refstepcounter{faqbox}
-    \begin{mdframed}[
-        frametitle={FAQ \thefaqbox\ #1},
-        skipabove=\baselineskip plus 2pt minus 1pt,
-        skipbelow=\baselineskip plus 2pt minus 1pt,
-        linewidth=0.5pt,
-        frametitlerule=true,
-        frametitlebackgroundcolor=gray!30
-    ]
-}{
-    \end{mdframed}
-}
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>\newcounter{faqbox}[section]
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>\renewcommand{\thefaqbox}{\thechapter.\arabic{faqbox}}
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>\usepackage[framemethod=TikZ]{mdframed}
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>\newenvironment{faqbox}[1][]{
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    \refstepcounter{faqbox}
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    \begin{mdframed}[
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        frametitle={FAQ \thefaqbox\ #1},
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        skipabove=\baselineskip plus 2pt minus 1pt,
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>        skipbelow=\baselineskip plus 2pt minus 1pt,
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>        linewidth=0.5pt,
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>        frametitlerule=true,
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>        frametitlebackgroundcolor=gray!30
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    ]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>}{
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    \end{mdframed}
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>}
 </pre></div>
 </div>
 </div>
@@ -246,21 +246,21 @@
 <p>You can use <code>titlesec</code> to redefine the specific style of your chapter’s style.</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>\titleformat
-{\chapter} % command
-[display] % shape
-{\bfseries\Large} % format
-{第 \ {\Huge\thechapter} 章} % label
-{0.5ex} % sep
-{
-    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-    %\centering
-} % before-code
-[
-%\vspace{-0.5ex}%
-%\rule{\textwidth}{0.3pt}
-] % after-code
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>\titleformat
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>{\chapter} % command
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>[display] % shape
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>{\bfseries\Large} % format
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>{第 \ {\Huge\thechapter} 章} % label
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>{0.5ex} % sep
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>{
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    \rule{\textwidth}{1pt}
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    \vspace{1ex}
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    %\centering
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>} % before-code
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>[
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>%\vspace{-0.5ex}%
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>%\rule{\textwidth}{0.3pt}
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>] % after-code
 </pre></div>
 </div>
 </div>

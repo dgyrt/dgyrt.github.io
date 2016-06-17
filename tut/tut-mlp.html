@@ -219,31 +219,31 @@
 <p>As you can see, all of them are simple functions that can be called from library easily. So why would I write it anyway. I decided to create a mask so that I don’t have to bother with remembering the current path from different places. The following is an example (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/nnfuns.py">here</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">theano.tensor</span> <span style="color:#080;font-weight:bold">as</span> T
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">tanh</span>(x):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Hyperbolic tangent nonlinearity</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    <span style="color:#080;font-weight:bold">return</span> T.tanh(x);
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">sigmoid</span>(x):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Standard sigmoid nonlinearity</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    <span style="color:#080;font-weight:bold">return</span> T.nnet.sigmoid(x);
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">softplus</span>(x):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Softplus nonlinearity</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    <span style="color:#080;font-weight:bold">return</span> T.nnet.softplus(x);
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">relu</span>(x):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Rectified linear unit</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    <span style="color:#080;font-weight:bold">return</span> x*(x&gt;<span style="color:#60E">1e-13</span>);
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">softmax</span>(x):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Softmax function</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    <span style="color:#080;font-weight:bold">return</span> T.nnet.softmax(x);
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">identity</span>(x):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Identity function</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    <span style="color:#080;font-weight:bold">return</span> x;
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">theano.tensor</span> <span style="color:#080;font-weight:bold">as</span> T
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">tanh</span>(x):
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Hyperbolic tangent nonlinearity</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">return</span> T.tanh(x);
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">sigmoid</span>(x):
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Standard sigmoid nonlinearity</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#080;font-weight:bold">return</span> T.nnet.sigmoid(x);
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">softplus</span>(x):
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Softplus nonlinearity</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#080;font-weight:bold">return</span> T.nnet.softplus(x);
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">relu</span>(x):
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Rectified linear unit</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span style="color:#080;font-weight:bold">return</span> x*(x&gt;<span style="color:#60E">1e-13</span>);
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">softmax</span>(x):
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Softmax function</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>    <span style="color:#080;font-weight:bold">return</span> T.nnet.softmax(x);
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">identity</span>(x):
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Identity function</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>    <span style="color:#080;font-weight:bold">return</span> x;
 </pre></div>
 </div>
 </div>
@@ -259,7 +259,7 @@
 <p>In python, you can write it as (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/fflayers.py#L36-L37">example</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">return</span> activation(<span style="color:#069">self</span>.apply_lin(X));
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">return</span> activation(<span style="color:#069">self</span>.apply_lin(X));
 </pre></div>
 </div>
 </div>
@@ -290,48 +290,48 @@
 <p>If you write your <code>Layer</code> correctly, then it’s very easy to extend them to be the above mentioned 4 types of layers. Here is an example (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/fflayers.py#L17-L58">here</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">IdentityLayer</span>(Layer):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Identity Layer</span><span>
-</span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
-        <span style="color:#369;font-weight:bold">super</span>(IdentityLayer, <span style="color:#069">self</span>).__init__(**kwargs);
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
-        <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">self</span>.apply_lin(X);
-        
-<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">TanhLayer</span>(Layer):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Tanh Layer</span><span>
-</span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
-        <span style="color:#369;font-weight:bold">super</span>(TanhLayer, <span style="color:#069">self</span>).__init__(**kwargs);
-        
-        <span style="color:#069">self</span>.initialize(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tanh</span><span style="color:#710">&quot;</span></span>);
-        
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
-        <span style="color:#080;font-weight:bold">return</span> nnfuns.tanh(<span style="color:#069">self</span>.apply_lin(X));
-    
-<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SigmoidLayer</span>(Layer):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Sigmoid Layer</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
-        
-        <span style="color:#369;font-weight:bold">super</span>(SigmoidLayer, <span style="color:#069">self</span>).__init__(**kwargs);
-        
-        <span style="color:#069">self</span>.initialize(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sigmoid</span><span style="color:#710">&quot;</span></span>);
-        
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
-        <span style="color:#080;font-weight:bold">return</span> nnfuns.sigmoid(<span style="color:#069">self</span>.apply_lin(X));
-
-<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">ReLULayer</span>(Layer):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>ReLU Layer</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
-        <span style="color:#369;font-weight:bold">super</span>(ReLULayer, <span style="color:#069">self</span>).__init__(**kwargs);
-        
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
-        <span style="color:#080;font-weight:bold">return</span> nnfuns.relu(<span style="color:#069">self</span>.apply_lin(X));
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">IdentityLayer</span>(Layer):
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Identity Layer</span><span></span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#D42"><span></span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>        <span style="color:#369;font-weight:bold">super</span>(IdentityLayer, <span style="color:#069">self</span>).__init__(**kwargs);
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>        <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">self</span>.apply_lin(X);
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>        
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">TanhLayer</span>(Layer):
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Tanh Layer</span><span></span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#D42"><span></span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>        <span style="color:#369;font-weight:bold">super</span>(TanhLayer, <span style="color:#069">self</span>).__init__(**kwargs);
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>        
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>        <span style="color:#069">self</span>.initialize(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tanh</span><span style="color:#710">&quot;</span></span>);
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>        
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>        <span style="color:#080;font-weight:bold">return</span> nnfuns.tanh(<span style="color:#069">self</span>.apply_lin(X));
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SigmoidLayer</span>(Layer):
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Sigmoid Layer</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>    
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>        
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>        <span style="color:#369;font-weight:bold">super</span>(SigmoidLayer, <span style="color:#069">self</span>).__init__(**kwargs);
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>        
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>        <span style="color:#069">self</span>.initialize(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sigmoid</span><span style="color:#710">&quot;</span></span>);
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>        
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>        <span style="color:#080;font-weight:bold">return</span> nnfuns.sigmoid(<span style="color:#069">self</span>.apply_lin(X));
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">ReLULayer</span>(Layer):
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>ReLU Layer</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>    
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>, **kwargs):
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>        <span style="color:#369;font-weight:bold">super</span>(ReLULayer, <span style="color:#069">self</span>).__init__(**kwargs);
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>        
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply</span>(<span style="color:#069">self</span>, X):
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>        <span style="color:#080;font-weight:bold">return</span> nnfuns.relu(<span style="color:#069">self</span>.apply_lin(X));
 </pre></div>
 </div>
 </div>
@@ -355,52 +355,52 @@
 <p>The following is an example for a weight initialization function (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/util.py">here</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">init_weights</span>(name,
-                 out_dim,
-                 in_dim=<span style="color:#069">None</span>,
-                 weight_type=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">none</span><span style="color:#710">&quot;</span></span>):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Create shared weights or bias</span><span>
-</span><span>    </span><span>
-</span><span>    Parameters</span><span>
-</span><span>    ----------</span><span>
-</span><span>    out_dim : int</span><span>
-</span><span>        output dimension</span><span>
-</span><span>    in_dim : int</span><span>
-</span><span>        input dimension</span><span>
-</span><span>    weight_type : string</span><span>
-</span><span>        type of weights: &quot;none&quot;, &quot;tanh&quot;, &quot;sigmoid&quot;</span><span>
-</span><span>    </span><span>
-</span><span>    Returns</span><span>
-</span><span>    -------</span><span>
-</span><span>    Weights : matrix or vector</span><span>
-</span><span>        shared matrix with respect size</span><span>
-</span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
-  
-    <span style="color:#080;font-weight:bold">if</span> in_dim <span style="color:#080;font-weight:bold">is</span> <span style="color:#080;font-weight:bold">not</span> <span style="color:#069">None</span>:
-        <span style="color:#080;font-weight:bold">if</span> weight_type==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tanh</span><span style="color:#710">&quot;</span></span>:
-            lower_bound=-np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
-            upper_bound=np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
-        <span style="color:#080;font-weight:bold">elif</span> weight_type==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sigmoid</span><span style="color:#710">&quot;</span></span>:
-            lower_bound=-<span style="color:#00D">4</span>*np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
-            upper_bound=<span style="color:#00D">4</span>*np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
-        <span style="color:#080;font-weight:bold">elif</span> weight_type==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">none</span><span style="color:#710">&quot;</span></span>:
-            lower_bound=<span style="color:#00D">0</span>;
-            upper_bound=<span style="color:#60E">1.</span>/(in_dim+out_dim);
-  
-    <span style="color:#080;font-weight:bold">if</span> in_dim==<span style="color:#069">None</span>:
-        <span style="color:#080;font-weight:bold">return</span> theano.shared(value=np.asarray(np.random.uniform(low=<span style="color:#00D">0</span>,
-                                                                high=<span style="color:#60E">1.</span>/out_dim,
-                                                                size=(out_dim, )),
-                                              dtype=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">float32</span><span style="color:#710">&quot;</span></span>),
-                             name=name,
-                             borrow=<span style="color:#069">True</span>);
-    <span style="color:#080;font-weight:bold">else</span>:
-        <span style="color:#080;font-weight:bold">return</span> theano.shared(value=np.asarray(np.random.uniform(low=lower_bound,
-                                                                high=upper_bound,
-                                                                size=(in_dim, out_dim)),
-                                              dtype=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">float32</span><span style="color:#710">&quot;</span></span>),
-                             name=name,
-                             borrow=<span style="color:#069">True</span>);
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">init_weights</span>(name,
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>                 out_dim,
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>                 in_dim=<span style="color:#069">None</span>,
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>                 weight_type=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">none</span><span style="color:#710">&quot;</span></span>):
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Create shared weights or bias</span><span></span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#D42"><span></span><span>    </span><span></span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#D42"><span></span><span>    Parameters</span><span></span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#D42"><span></span><span>    ----------</span><span></span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#D42"><span></span><span>    out_dim : int</span><span></span></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#D42"><span></span><span>        output dimension</span><span></span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#D42"><span></span><span>    in_dim : int</span><span></span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#D42"><span></span><span>        input dimension</span><span></span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#D42"><span></span><span>    weight_type : string</span><span></span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#D42"><span></span><span>        type of weights: &quot;none&quot;, &quot;tanh&quot;, &quot;sigmoid&quot;</span><span></span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#D42"><span></span><span>    </span><span></span></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#D42"><span></span><span>    Returns</span><span></span></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#D42"><span></span><span>    -------</span><span></span></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#D42"><span></span><span>    Weights : matrix or vector</span><span></span></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#D42"><span></span><span>        shared matrix with respect size</span><span></span></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="color:#D42"><span></span><span>    </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#080;font-weight:bold">if</span> in_dim <span style="color:#080;font-weight:bold">is</span> <span style="color:#080;font-weight:bold">not</span> <span style="color:#069">None</span>:
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>        <span style="color:#080;font-weight:bold">if</span> weight_type==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tanh</span><span style="color:#710">&quot;</span></span>:
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>            lower_bound=-np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>            upper_bound=np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>        <span style="color:#080;font-weight:bold">elif</span> weight_type==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sigmoid</span><span style="color:#710">&quot;</span></span>:
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>            lower_bound=-<span style="color:#00D">4</span>*np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>            upper_bound=<span style="color:#00D">4</span>*np.sqrt(<span style="color:#60E">6.</span> / (in_dim + out_dim));
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>        <span style="color:#080;font-weight:bold">elif</span> weight_type==<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">none</span><span style="color:#710">&quot;</span></span>:
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>            lower_bound=<span style="color:#00D">0</span>;
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>            upper_bound=<span style="color:#60E">1.</span>/(in_dim+out_dim);
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>  
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>    <span style="color:#080;font-weight:bold">if</span> in_dim==<span style="color:#069">None</span>:
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>        <span style="color:#080;font-weight:bold">return</span> theano.shared(value=np.asarray(np.random.uniform(low=<span style="color:#00D">0</span>,
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>                                                                high=<span style="color:#60E">1.</span>/out_dim,
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>                                                                size=(out_dim, )),
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>                                              dtype=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">float32</span><span style="color:#710">&quot;</span></span>),
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>                             name=name,
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>                             borrow=<span style="color:#069">True</span>);
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>    <span style="color:#080;font-weight:bold">else</span>:
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>        <span style="color:#080;font-weight:bold">return</span> theano.shared(value=np.asarray(np.random.uniform(low=lower_bound,
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>                                                                high=upper_bound,
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span>                                                                size=(in_dim, out_dim)),
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>                                              dtype=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">float32</span><span style="color:#710">&quot;</span></span>),
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>                             name=name,
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>                             borrow=<span style="color:#069">True</span>);
 </pre></div>
 </div>
 </div>

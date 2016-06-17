@@ -233,44 +233,44 @@
 <p>The following is an example implementation of <code>__init__</code> method (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/layer.py#L18-L55">here</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Layer</span>(<span style="color:#369;font-weight:bold">object</span>):
-    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Abstract layer for Feed-forward Neural Networks</span><span style="color:black">&quot;&quot;&quot;</span></span>
-    
-    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>,
-                 in_dim,
-                 out_dim,
-                 layer_name=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Layer</span><span style="color:#710">&quot;</span></span>,
-                 W=<span style="color:#069">None</span>,
-                 bias=<span style="color:#069">None</span>,
-                 use_bias=<span style="color:#069">True</span>,
-                 is_recursive=<span style="color:#069">False</span>,
-                 **kwargs):
-        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Base Layer initalization</span><span>
-</span><span>        </span><span>
-</span><span>        Parameters</span><span>
-</span><span>        ----------</span><span>
-</span><span>        in_dim : int</span><span>
-</span><span>            input dimension of the layer</span><span>
-</span><span>        out_dim : int</span><span>
-</span><span>            output dimension of the layer</span><span>
-</span><span>        W : matrix</span><span>
-</span><span>            weight matrix for the layer, the size should be (in_dim, out_dim),</span><span>
-</span><span>            if it is None, then the class will create one</span><span>
-</span><span>        bias : vector</span><span>
-</span><span>            bias vector for the layer, the size should be (out_dim),</span><span>
-</span><span>            if it is None, then the class will create one</span><span>
-</span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
-        
-        <span style="color:#069">self</span>.in_dim=in_dim;
-        <span style="color:#069">self</span>.out_dim=out_dim;
-        <span style="color:#069">self</span>.W=W;
-        <span style="color:#069">self</span>.bias=bias;
-        <span style="color:#069">self</span>.use_bias=use_bias;
-        <span style="color:#069">self</span>.is_recursive=is_recursive;
-        
-        <span style="color:#069">self</span>.initialize();
-        
-        <span style="color:#369;font-weight:bold">super</span>(Layer, <span style="color:#069">self</span>).__init__(**kwargs);
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Layer</span>(<span style="color:#369;font-weight:bold">object</span>):
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Abstract layer for Feed-forward Neural Networks</span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">__init__</span>(<span style="color:#069">self</span>,
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>                 in_dim,
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>                 out_dim,
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>                 layer_name=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Layer</span><span style="color:#710">&quot;</span></span>,
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>                 W=<span style="color:#069">None</span>,
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>                 bias=<span style="color:#069">None</span>,
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>                 use_bias=<span style="color:#069">True</span>,
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>                 is_recursive=<span style="color:#069">False</span>,
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>                 **kwargs):
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Base Layer initalization</span><span></span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#D42"><span></span><span>        </span><span></span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#D42"><span></span><span>        Parameters</span><span></span></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#D42"><span></span><span>        ----------</span><span></span></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#D42"><span></span><span>        in_dim : int</span><span></span></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#D42"><span></span><span>            input dimension of the layer</span><span></span></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#D42"><span></span><span>        out_dim : int</span><span></span></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="color:#D42"><span></span><span>            output dimension of the layer</span><span></span></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="color:#D42"><span></span><span>        W : matrix</span><span></span></span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="color:#D42"><span></span><span>            weight matrix for the layer, the size should be (in_dim, out_dim),</span><span></span></span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#D42"><span></span><span>            if it is None, then the class will create one</span><span></span></span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span style="color:#D42"><span></span><span>        bias : vector</span><span></span></span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="color:#D42"><span></span><span>            bias vector for the layer, the size should be (out_dim),</span><span></span></span>
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span><span style="color:#D42"><span></span><span>            if it is None, then the class will create one</span><span></span></span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span><span style="color:#D42"><span></span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>        
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>        <span style="color:#069">self</span>.in_dim=in_dim;
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>        <span style="color:#069">self</span>.out_dim=out_dim;
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>        <span style="color:#069">self</span>.W=W;
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>        <span style="color:#069">self</span>.bias=bias;
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>        <span style="color:#069">self</span>.use_bias=use_bias;
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>        <span style="color:#069">self</span>.is_recursive=is_recursive;
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>        
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>        <span style="color:#069">self</span>.initialize();
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>        
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>        <span style="color:#369;font-weight:bold">super</span>(Layer, <span style="color:#069">self</span>).__init__(**kwargs);
 </pre></div>
 </div>
 </div>
@@ -278,20 +278,20 @@
 <p>Usually, we would like to initialize the weight when we create a layer. I used to initialize them in <code>__init__</code>, however, this could be messy when you try to extend this class to a more complex one. Therefore, I wrote an <strong>initialize</strong> function to make initialization more flexible (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/layer.py#L57-L70">here</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(<span style="color:#069">self</span>, weight_type=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">none</span><span style="color:#710">&quot;</span></span>):
-        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Initialize weights and bias</span><span>
-</span><span>        </span><span>
-</span><span>        Parameters</span><span>
-</span><span>        ----------</span><span>
-</span><span>        weight_type : string</span><span>
-</span><span>            type of weights: &quot;none&quot;, &quot;tanh&quot;, &quot;sigmoid&quot;</span><span>
-</span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
-        
-        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.W==<span style="color:#069">None</span>:
-            <span style="color:#069">self</span>.W=util.init_weights(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">W</span><span style="color:#710">&quot;</span></span>, <span style="color:#069">self</span>.out_dim, <span style="color:#069">self</span>.in_dim, weight_type=weight_type);
-            
-        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.use_bias==<span style="color:#069">True</span> <span style="color:#080;font-weight:bold">and</span> <span style="color:#069">self</span>.bias==<span style="color:#069">None</span>:
-            <span style="color:#069">self</span>.bias=util.init_weights(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bias</span><span style="color:#710">&quot;</span></span>, <span style="color:#069">self</span>.out_dim, weight_type=weight_type);
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(<span style="color:#069">self</span>, weight_type=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">none</span><span style="color:#710">&quot;</span></span>):
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Initialize weights and bias</span><span></span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#D42"><span></span><span>        </span><span></span></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#D42"><span></span><span>        Parameters</span><span></span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#D42"><span></span><span>        ----------</span><span></span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#D42"><span></span><span>        weight_type : string</span><span></span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#D42"><span></span><span>            type of weights: &quot;none&quot;, &quot;tanh&quot;, &quot;sigmoid&quot;</span><span></span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#D42"><span></span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>        
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.W==<span style="color:#069">None</span>:
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>            <span style="color:#069">self</span>.W=util.init_weights(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">W</span><span style="color:#710">&quot;</span></span>, <span style="color:#069">self</span>.out_dim, <span style="color:#069">self</span>.in_dim, weight_type=weight_type);
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>            
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.use_bias==<span style="color:#069">True</span> <span style="color:#080;font-weight:bold">and</span> <span style="color:#069">self</span>.bias==<span style="color:#069">None</span>:
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>            <span style="color:#069">self</span>.bias=util.init_weights(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bias</span><span style="color:#710">&quot;</span></span>, <span style="color:#069">self</span>.out_dim, weight_type=weight_type);
 </pre></div>
 </div>
 </div>
@@ -303,26 +303,26 @@
 <p>A example of writing it is (<a href="https://github.com/duguyue100/telaugesa/blob/master/telaugesa/layer.py#L72-L91">here</a>):</p>
 
 <div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply_lin</span>(<span style="color:#069">self</span>, X):
-        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Apply linear transformation</span><span>
-</span><span>        </span><span>
-</span><span>        Parameters</span><span>
-</span><span>        ----------</span><span>
-</span><span>        X : matrix</span><span>
-</span><span>            input samples, the size is (number of cases, in_dim)</span><span>
-</span><span>            </span><span>
-</span><span>        Returns</span><span>
-</span><span>        -------</span><span>
-</span><span>        Y : matrix</span><span>
-</span><span>            output results, the size is (number of cases, out_dim);</span><span>
-</span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
-        
-        Y=T.dot(X, <span style="color:#069">self</span>.W);
-        
-        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.use_bias==<span style="color:#069">True</span>:
-            Y+=<span style="color:#069">self</span>.bias;
-        
-        <span style="color:#080;font-weight:bold">return</span> Y;
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">apply_lin</span>(<span style="color:#069">self</span>, X):
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>        <span style="color:#D42"><span style="color:black">&quot;&quot;&quot;</span><span>Apply linear transformation</span><span></span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#D42"><span></span><span>        </span><span></span></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#D42"><span></span><span>        Parameters</span><span></span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#D42"><span></span><span>        ----------</span><span></span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#D42"><span></span><span>        X : matrix</span><span></span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#D42"><span></span><span>            input samples, the size is (number of cases, in_dim)</span><span></span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#D42"><span></span><span>            </span><span></span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#D42"><span></span><span>        Returns</span><span></span></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#D42"><span></span><span>        -------</span><span></span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#D42"><span></span><span>        Y : matrix</span><span></span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#D42"><span></span><span>            output results, the size is (number of cases, out_dim);</span><span></span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#D42"><span></span><span>        </span><span style="color:black">&quot;&quot;&quot;</span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>        
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>        Y=T.dot(X, <span style="color:#069">self</span>.W);
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>        
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.use_bias==<span style="color:#069">True</span>:
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>            Y+=<span style="color:#069">self</span>.bias;
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>        
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>        <span style="color:#080;font-weight:bold">return</span> Y;
 </pre></div>
 </div>
 </div>
